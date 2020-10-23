@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> QA PRE Prod [1192]  _QA_Email_Key [164] </title>	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>	
+</head>
+<body>
+
+<script>
+
+	$(function ()
+	{		
+		$.getScript('http://'+ getServer() +'/js/Journey/1/qAQAAHNjVmNFTaQAAABnNWhwSDY3AAAA/DI.Journey.js');
+	});
+
+	function OFSYS_Tracking_onload()
+	{		
+		track("lmorissette1@dialoginsight.com");
+		track("lmorissette2@dialoginsight.com");
+		track("lmorissette3@dialoginsight.com");
+	}
+
+	function resetStorage()
+	{
+		localStorage.clear();
+		sessionStorage.clear();
+	}	
+
+	function track(email)
+	{
+		resetStorage();
+		DI.Journey.Set("f_EMail", email);
+		DI.Journey.Track();
+	}
+
+	function getServer()
+	{
+		var server = 'demo-t.dialoginsight.com';
+		var urlParams = new URLSearchParams(window.location.search);
+		var entries = urlParams.entries();
+
+		for(pair of entries) 
+		{ 
+			if(pair[0] === 'server')
+				server = pair[1];
+		}
+
+		return server;
+	}
+
+</script>
+
+<h1> QA PRE Prod [1192]  _QA_Email_Key [164]</h1>
+
+
+ <br /> <br />
+
+
+<p> Cette page est un lien sur server de parcours. Un marketing auto va être exécuté </p>
+
+</body>
+</html>
